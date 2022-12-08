@@ -1,2 +1,2 @@
 project(test)
-add_executable(test main.cpp)
+add_executable(test main.c)
