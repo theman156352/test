@@ -38,4 +38,4 @@ jobs:
       with:
         files: |
             ${{github.workspace}}/build/bin/wings
-            ${{github.workspace}}/build/bin/wings.exe
+            ${{github.workspace}}/build/bin/Release/wings.exe
