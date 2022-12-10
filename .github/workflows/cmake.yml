@@ -3,7 +3,7 @@ name: CMake
 on:
   push:
     tags:
-      - 'v*'
+      - '*'
 
 env:
   BUILD_TYPE: Release
@@ -20,7 +20,7 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Configure CMake
-      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DWINGS_SHELL_VERSION=${{github.ref_name}} -DWINGS_NO_DEV=true
 
     - name: Build
       run: |
@@ -40,4 +40,4 @@ jobs:
       with:
         prerelease: true
         files: |
-            ${{github.workspace}}/build/bin/Release/wings
+            ${{github.workspace}}/build/bin/Release/wings.exe
