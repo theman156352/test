@@ -32,7 +32,7 @@ jobs:
       with:
         prerelease: true
         files: |
-            ${{github.workspace}}/build/bin/wings
+            build/bin/wings
             
     - name: Release-Windows
       uses: softprops/action-gh-release@v1
@@ -40,4 +40,4 @@ jobs:
       with:
         prerelease: true
         files: |
-            ${{github.workspace}}\build\bin\${{env.BUILD_TYPE}}\wings.exe
+            build/bin/${{env.BUILD_TYPE}}/wings.exe
