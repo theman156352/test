@@ -40,4 +40,4 @@ jobs:
       with:
         prerelease: true
         files: |
-            ${{github.workspace}}/build/bin/Release/wings.exe
+            ${{github.workspace}}\build\bin\${{env.BUILD_TYPE}}\wings.exe
